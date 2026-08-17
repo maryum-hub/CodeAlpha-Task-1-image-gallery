@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Luxe Edit</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                CURATED STYLE COLLECTION
+            </p>
+
+            <h1>
+                The Luxe Edit
+            </h1>
+
+            <p class="hero-text">
+                Discover beauty, fashion & statement pieces
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= FILTER SECTION ================= -->
+
+    <section class="filter-section">
+
+        <p class="section-label">
+            EXPLORE THE COLLECTION
+        </p>
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                onclick="filterImages('all', this)">
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterImages('makeup', this)">
+                Makeup
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterImages('shoes', this)">
+                Shoes
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterImages('accessories', this)">
+                Accessories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <main class="gallery">
+
+
+        <!-- MAKEUP 1 -->
+
+        <div
+            class="gallery-item"
+            data-category="makeup"
+            onclick="openLightbox(0)">
+
+            <img
+                src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=85"
+                alt="Makeup Collection">
+
+            <div class="overlay">
+
+                <span>MAKEUP</span>
+
+                <h3>
+                    Beauty Essentials
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOES 1 -->
+
+        <div
+            class="gallery-item"
+            data-category="shoes"
+            onclick="openLightbox(1)">
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+                alt="Red Sneakers">
+
+            <div class="overlay">
+
+                <span>SHOES</span>
+
+                <h3>
+                    Statement Sneakers
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACCESSORIES 1 -->
+
+        <div
+            class="gallery-item"
+            data-category="accessories"
+            onclick="openLightbox(2)">
+
+            <img
+                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=900&q=85"
+                alt="Luxury Watch">
+
+            <div class="overlay">
+
+                <span>ACCESSORIES</span>
+
+                <h3>
+                    Timeless Details
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAKEUP 2 -->
+
+        <div
+            class="gallery-item"
+            data-category="makeup"
+            onclick="openLightbox(3)">
+
+            <img
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85"
+                alt="Lipsticks">
+
+            <div class="overlay">
+
+                <span>MAKEUP</span>
+
+                <h3>
+                    Lip Color Edit
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOES 2 -->
+
+        <div
+            class="gallery-item"
+            data-category="shoes"
+            onclick="openLightbox(4)">
+
+            <img
+                src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=900&q=85"
+                alt="Fashion Shoes">
+
+            <div class="overlay">
+
+                <span>SHOES</span>
+
+                <h3>
+                    Everyday Chic
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACCESSORIES 2 -->
+
+        <div
+            class="gallery-item"
+            data-category="accessories"
+            onclick="openLightbox(5)">
+
+            <img
+                src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=85"
+                alt="Jewelry">
+
+            <div class="overlay">
+
+                <span>ACCESSORIES</span>
+
+                <h3>
+                    Golden Glow
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- MAKEUP 3 -->
+
+        <div
+            class="gallery-item"
+            data-category="makeup"
+            onclick="openLightbox(6)">
+
+            <img
+                src="https://images.unsplash.com/photo-1583241800698-e8ab01830a07?auto=format&fit=crop&w=900&q=85"
+                alt="Beauty Products">
+
+            <div class="overlay">
+
+                <span>MAKEUP</span>
+
+                <h3>
+                    Soft Glam
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHOES 3 -->
+
+        <div
+            class="gallery-item"
+            data-category="shoes"
+            onclick="openLightbox(7)">
+
+            <img
+                src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=900&q=85"
+                alt="White Sneakers">
+
+            <div class="overlay">
+
+                <span>SHOES</span>
+
+                <h3>
+                    Clean & Classic
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACCESSORIES 3 -->
+
+        <div
+            class="gallery-item"
+            data-category="accessories"
+            onclick="openLightbox(8)">
+
+            <img
+                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=85"
+                alt="Elegant Jewelry">
+
+            <div class="overlay">
+
+                <span>ACCESSORIES</span>
+
+                <h3>
+                    Everyday Sparkle
+                </h3>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div
+        class="lightbox"
+        id="lightbox">
+
+
+        <!-- CLOSE BUTTON -->
+
+        <button
+            class="close"
+            onclick="closeLightbox()">
+
+            &times;
+
+        </button>
+
+
+        <!-- PREVIOUS -->
+
+        <button
+            class="prev"
+            onclick="previousImage()">
+
+            &#10094;
+
+        </button>
+
+
+        <!-- IMAGE -->
+
+        <div class="lightbox-content">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt="Selected Product">
+
+            <p id="lightboxTitle"></p>
+
+        </div>
+
+
+        <!-- NEXT -->
+
+        <button
+            class="next"
+            onclick="nextImage()">
+
+            &#10095;
+
+        </button>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            The Luxe Edit
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
