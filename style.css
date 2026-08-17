@@ -1,0 +1,578 @@
+/* =====================================
+   GOOGLE FONTS
+===================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap'
+);
+
+
+/* =====================================
+   GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background-color: #f8f5f2;
+
+    color: #272323;
+}
+
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+
+    background:
+        linear-gradient(
+            rgba(55, 38, 48, 0.62),
+            rgba(55, 38, 48, 0.62)
+        ),
+
+        url(
+            "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=85"
+        )
+
+        center / cover;
+}
+
+
+.hero-content {
+    color: white;
+}
+
+
+.small-title {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 14px;
+
+    opacity: 0.9;
+}
+
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(
+        48px,
+        8vw,
+        82px
+    );
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+
+.hero-text {
+    font-size: 17px;
+
+    font-weight: 300;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================
+   FILTER SECTION
+===================================== */
+
+.filter-section {
+    text-align: center;
+
+    padding: 42px 15px 30px;
+}
+
+
+.section-label {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #8b727a;
+
+    margin-bottom: 20px;
+}
+
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+/* =====================================
+   FILTER BUTTON
+===================================== */
+
+.filter-btn {
+    border: 1px solid #ded3d6;
+
+    background-color: white;
+
+    color: #3d3437;
+
+    padding: 11px 24px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+.filter-btn:hover {
+    background-color: #4f3942;
+
+    color: white;
+
+    border-color: #4f3942;
+
+    transform: translateY(-2px);
+}
+
+
+.filter-btn.active {
+    background-color: #4f3942;
+
+    color: white;
+
+    border-color: #4f3942;
+}
+
+
+/* =====================================
+   GALLERY
+===================================== */
+
+.gallery {
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 15px 0 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =====================================
+   GALLERY ITEM
+===================================== */
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background-color: white;
+
+    cursor: pointer;
+
+
+    box-shadow:
+        0 8px 25px
+        rgba(62, 43, 50, 0.10);
+
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.gallery-item:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(62, 43, 50, 0.18);
+}
+
+
+/* =====================================
+   GALLERY IMAGE
+===================================== */
+
+.gallery-item img {
+    width: 100%;
+
+    height: 300px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =====================================
+   IMAGE OVERLAY
+===================================== */
+
+.overlay {
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 55px 22px 22px;
+
+    color: white;
+
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(25, 17, 21, 0.88)
+        );
+
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.overlay span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.85;
+}
+
+
+.overlay h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 23px;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================
+   LIGHTBOX
+===================================== */
+
+.lightbox {
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    background:
+        rgba(22, 16, 19, 0.95);
+
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.lightbox-content {
+    text-align: center;
+}
+
+
+.lightbox img {
+    max-width: 78vw;
+
+    max-height: 78vh;
+
+    border-radius: 12px;
+
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+#lightboxTitle {
+    color: white;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 22px;
+
+    margin-top: 12px;
+}
+
+
+/* =====================================
+   CLOSE BUTTON
+===================================== */
+
+.close {
+    position: absolute;
+
+    top: 22px;
+
+    right: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.close:hover {
+    color: #d9b8c2;
+}
+
+
+/* =====================================
+   NEXT / PREVIOUS
+===================================== */
+
+.prev,
+.next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+
+    width: 50px;
+
+    height: 50px;
+
+
+    border: none;
+
+    border-radius: 50%;
+
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.prev:hover,
+.next:hover {
+    background-color: #9b7180;
+}
+
+
+.prev {
+    left: 30px;
+}
+
+
+.next {
+    right: 30px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+
+    padding: 22px;
+
+    background-color: #292326;
+
+    color: #ddd;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .gallery-item img {
+
+        height: 280px;
+
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        min-height: 270px;
+
+        padding: 45px 15px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 50px;
+
+    }
+
+
+    .hero-text {
+
+        font-size: 14px;
+
+    }
+
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        width: 90%;
+
+    }
+
+
+    .gallery-item img {
+
+        height: 300px;
+
+    }
+
+
+    .overlay {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+
+    .prev {
+
+        left: 10px;
+
+    }
+
+
+    .next {
+
+        right: 10px;
+
+    }
+
+
+    .lightbox img {
+
+        max-width: 82vw;
+
+        max-height: 70vh;
+
+    }
+
+}
